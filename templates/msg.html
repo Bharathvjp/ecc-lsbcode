@@ -1,0 +1,99 @@
+{% extends "base.html"%}
+
+{% block head %}
+  Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+    crossorigin="anonymous"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<style>
+    body{
+       /* background-color: rgb(63, 156, 218); */
+       background-image: url(https://www.teahub.io/photos/full/96-960665_desktop-wallpaper-laptop-mac-macbook-air-vk55-andro.jpg);
+       background-repeat: no-repeat;
+       background-size: cover;
+      background-attachment: fixed;
+    }
+
+
+.main_img{
+    width: 500px; 
+    height: 400px;
+     border-radius: 20px;
+     box-shadow: 2px 3px 24px black;
+}
+
+.cardd{
+    box-shadow: 2px 3px 10px rgb(75, 75, 75);
+    /* background-color:rgb(138, 208, 255) ; */
+}
+
+.main_txt{
+    letter-spacing:3px;
+
+}
+</style>
+
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark navb ">
+  <a class="navbar-brand" href="#"><h3>ECC-LSB</h3></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active h5 mx-3" href="/home">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link active h5 mx-3" href="/signup" tabindex="-1" aria-disabled="true">signup</a>
+      <a class="nav-link active h5 mx-3" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
+      
+      <a class="nav-link active h5 mx-3" href="/">share <span class="sr-only">(current)</span></a>
+      
+    </div>
+  </div>
+</nav> 
+{% endblock %}
+
+{% block body %} 
+<br>
+<br>
+<br>
+  <center>
+  <h2 style="color: ivory;">Create a New Message</h2>
+  <br>
+  <form action='/home/msg' method='POST' enctype='multipart/form-data' style="width: 550px;">
+    
+    
+    <input class="form-control" type="email" name='email' id='email' placeholder="Recipient email" aria-label="Enter a email">
+    <br>
+    
+    <textarea class="form-control" id="plaintext" name="plaintext"placeholder="Enter plaintext" aria-label="Enter plaintext" rows="2"></textarea>
+    <br>
+    <div class="input-group mb-3">
+    <input type="file" class="form-control" id="image" name="image">
+  <!-- <label class="input-group-text" for="image">Upload</label> -->
+    </div>
+  
+  <!-- <label for="title">Title:</label>
+  <input class="form-control" type="text" name='title' id='title' placeholder="Enter a Title" aria-label="Enter a Title">
+  <br>
+  <label for="author">Author:</label>
+  <input class="form-control" type="text" name='author' id='author' placeholder="Enter a Author name" aria-label="Enter a Author name">
+  <br>
+  <label for="content">Post:</label>
+  <textarea class="form-control" id="content" name="content"placeholder="Enter content" aria-label="Enter content" rows="3"></textarea> -->
+
+    <br>
+    <center>
+    <button type="submit" class="btn btn-outline-danger" style="color: whitesmoke; border-color: red;">Send</button>
+    </center>
+  </form>
+  </center>
+  <hr>
+
+{% endblock %}
